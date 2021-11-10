@@ -1,0 +1,206 @@
+header.sec01 {
+    height: 500px;
+    background-image: url(./img/Empresa4.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#borda{
+    border: 2px solid black;
+    margin: 0.3%;
+    width: 32%;
+}
+
+#nev{
+    border: 2px hidden black;
+    margin: 0.8%;
+    max-width: 48%;
+}
+
+#nev img{
+    max-width: 50%;
+    width: auto;
+}
+
+
+.clearfix {
+    clear: both;
+}
+
+#container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.um_terco {
+    width: 33%;
+    float: left;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+.um_terco, .um_terco a {
+    color: black;
+}
+.um_terco .logo {
+    width: 100%;
+}
+.um_terco img {
+    width: 35px;
+}
+.margem_esquerda{
+    margin-left: 30px;
+}
+
+.logo{
+    height: 170px;
+}
+
+/* Tablets e Computadores */
+@media screen and (min-width: 481px) and (max-width: 1366px){
+    
+}
+/* Smartphones */
+@media screen and (max-width: 480px) {
+    .logo {
+        width: 100%;
+    }
+    .um_terco {
+        width: 100%;
+        border-bottom: 1px solid rgb(204, 204, 204);
+        padding-left: 20px;
+    }
+    .margem_esquerda {
+        margin-left: 0px;
+    }
+    .um_terco .logo{
+        width: 50%;
+    }
+    .container_logo {
+        text-align: center;
+    }
+}
+
+
+#menu {
+    background-color: rgba(100,0,0, .8);
+}
+
+.direitos_reservados {
+    background-color: rgb(255, 77, 77);
+    color: white;
+    text-align: center;
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+
+#papel {
+    text-align: center;
+    position: center;
+    background-color: #1c0304;
+}
+
+
+main h2{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20pt;
+    /*
+    Estilos da borda:
+    solid-> linha sólida
+    dotted-> linha pontilhada
+    dashed-> linha tracejada
+    double-> linha dupla. Sempre com a expessura par (2px; 4px;)
+    */
+    border-bottom: 1px solid black;
+    padding: 30px;
+    text-align: center;
+}
+
+main h3{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15pt;
+    font-weight: bold;   /*aplicação de negrito*/
+    padding: 20px;
+}
+main p{
+    font-family: 'Roboto Mono', monospace; 
+    font-size: 12pt;
+    /*abaixo o comando de altura da linha em 2px;
+    */
+    line-height: 20pt;
+    text-align: justify; /*Texto justificado*/
+    padding: 10px;
+}
+
+#imghome img{
+width: 30vw;
+right: auto;
+margin: 50px;
+/*Arredondar os cantos da iagem*/
+border-radius: 50%;
+/*Aplicar efeito de transparencia na imagem usando o comando opacity*/
+opacity: 0.5;
+/*Efeito de transição 1 segundo de duração*/
+transition: ease .5s;
+
+}
+
+#imghome img:hover{
+    border-radius: 0;
+    opacity: 1;
+    transform: scale(1.5);
+   /* transition: rotate (gira a imagem)*/
+}
+
+main div{
+    text-align: center;
+}
+
+
+main #linha{
+display: inline-flex;
+
+}
+
+main #linha #Item img{
+    width: 100%; /*Tamanho da linha*/    
+}
+main #linha #Item{
+    width: 23%;
+    margin: 0.8%;
+    border: 1px solid silver;
+    padding: 0.3%;
+}
+
+
+.metade img {
+    width: 35px;
+}
+
+.contato{
+    background-image: url(./img/contato2.jpg);
+    height: 300px;
+    color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: gray;
+    
+}
+
+div#descrição{
+    background-position: center;
+    text-align: center;
+}
+
+#fundo{
+    background-color: blue;
+    color: white;
+}
+
+div.sobre {
+    background-position: center;
+    text-align: center;
+
+}

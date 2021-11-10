@@ -1,0 +1,524 @@
+/*
+font-family: 'Crimson Text', serif;
+font-family: 'Roboto Mono', monospace;
+font-family: 'Playfair Display', serif;
+font-family: 'Amatic SC', cursive;
+*/
+
+/*
+Vamos retirar as magens internas com (padding) e
+externas (margin), para isso iremos usar o caracter 
+asterisco(*) que representa todas tags
+*/
+
+*{
+    margin:0;
+    padding:0;
+    /*permite alterar a largura dos elementos e soma automáticamente com a
+    margem interna e a borda da caixa sem mudar o tamanho definido pela largura ou
+    altura
+    */
+    box-sizing: border-box;
+}
+body{
+    /* 
+    O comando display é utilizado para dispor as áreas em grade.
+    */
+    display: grid;
+    /*
+    Nosso site possui apenas uma coluna, portanto utilizando 
+    a grade superio com uma coluna com tamanho automático. Isso
+    faz com que ela, ocipe 100% fe largura da tela.
+    */
+    grid-template-columns: auto;
+
+    /*
+    Abaixo estamos defindo a altura das áres do nosso site
+    a primeira área é referente ao header (cabeçalho) e foi definida
+    com 10vh (viewport height-altura da viewport).
+    A segunda área é referente ao main (principa)
+    e foi definida com 60vh, porém você deve utilizar auto para que seu
+    tamanho creça automáticamente.
+    a terceia área é referente ao footer (rodapé) e foi definida com
+    20vh (iewport height)
+       */
+   /* grid-template-rows: 50vh auto 12vh;*/
+
+    /*
+    Definindo os nomes das áreas.
+    */
+       /* grid-template-areas: "header" "main" "footer";*/
+    background-color:black;
+}
+/*header{
+    background-image:url("../img/stream.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    grid-area: "header"; /*Definir o nome da área do cabeçalho como header
+}*/
+
+
+main{
+    background-color: white;
+    grid-area: "main"; /* Definir o nome da área do principal como main*/
+}
+
+
+header #superior{
+    background-color: rgba(100,0,0, .8);
+    /* Vamos fixar o menu na parte superior do navegador*/
+    position: fixed; /* Posição fixa*/
+    width: 100%; /* Ocupar toda a largura da página*/
+    top: 0px; /* Garantir o posicionamento da barra de menus no topo*/
+    left: 0; /*  Garantir que sempre irá para a esquerda*/
+    z-index: 1000; /* Empilhamento do menu superior. 
+    Faz com que fique acima de todos os elementos da tela*/
+    /*text-align: center; /* Alinhar todos os links ao centro da tela*/
+    /* height: 60px;  */
+    /*Para alinhar verticalmente os links, usamos a margem interna 
+    de topo e amargem interna de base (bottom) aplicando 20px as margens*/
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+/* Lembre se que li(list item,ou seja, item da lista). 
+Isso faz com que os links fiquem um abaixo do outro como uma lista.
+Para formatar e dispor os links um ao lado do o utro usamos o comando
+display(exibição) com valor inline-block(blocos em linha)*/
+header #superior li{
+    display: inline-block;
+    /*Para distanciar os links usamos as margens direita e esquerda com 10px*/
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+header #superior li a{ /* Retirar o underline (sublinhado)*/
+    color: white;
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+    /*Ao passar o ponteiro do mouse sobre os links 
+    há uma mudança na cor e é adicionado um bublinhado
+    ao link*/
+}
+header #superior li a:hover{
+    color:lightgreen;
+    
+}
+
+header h1{
+padding-top:80px;
+color:rgba(255,255,255, 0.8);
+text-align: center;
+font-family: 'Roboto Mono', monospace;
+font-size: 28pt; /* Alterar o tamanho da letra para 18 pontos*/
+font-weight: bold; /* Aplicar negrito ao titulo h1*/
+
+}
+header #redeSocialSuperior{
+    text-align: right;
+    padding-top: 0px;
+    padding-right: 20px;
+}
+
+header #redeSocialSuperior li{
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+header #redeSocialSuperior li a img{
+    width: 55px;
+    height: 55px;
+}
+
+footer #endereco{
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    text-align: left;
+    width: 40vw; /* alterar a largura para 40% do footer*/
+}
+footer #redesocialinferior{
+    padding-top:20px;
+    padding-left: 20px;
+    width: 40vw;
+}
+
+footer #redesocialinferior li{
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+footer #redesocialinferior li a img{
+    width: 40px;
+    height: 40px;
+}
+
+/*################# formatação da index ################*/
+
+main h2{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20pt;
+    /*
+    Estilos da borda:
+    solid-> linha sólida
+    dotted-> linha pontilhada
+    dashed-> linha tracejada
+    double-> linha dupla. Sempre com a expessura par (2px; 4px;)
+    */
+    border-bottom: 1px solid black;
+    padding: 30px;
+    text-align: center;
+}
+
+main h3{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15pt;
+    font-weight: bold;   /*aplicação de negrito*/
+    padding: 20px;
+}
+main p{
+    font-family: 'Roboto Mono', monospace; 
+    font-size: 12pt;
+    /*abaixo o comando de altura da linha em 2px;
+    */
+    line-height: 20pt;
+    text-align: justify; /*Texto justificado*/
+    padding: 10px;
+}
+
+main #imghome img{
+width: 30vw;
+right: auto;
+margin: 20px;
+/*Arredondar os cantos da iagem*/
+border-radius: 40%;
+/*Aplicar efeito de transparencia na imagem usando o comando opacity*/
+opacity: 0.7;
+/*Efeito de transição 1 segundo de duração*/
+transition: ease .5s;
+
+}
+
+main #imghome img:hover{
+    border-radius: 0;
+    opacity: 1;
+    transform: scale(1.5);
+   /* transition: rotate (gira a imagem)*/
+}
+
+main div{
+    text-align: center;
+}
+
+
+
+/*############################## Formatação da página Cardápio ######################################*/
+
+
+main #linha{
+display: inline-flex;
+
+}
+
+main #linha #Item img{
+    width: 100%; /*Tamanho da linha*/    
+}
+main #linha #Item{
+    width: 23%;
+    margin: 0.8%;
+    border: 1px solid silver;
+    padding: 0.3%;
+}
+/*############################## Formatação da página Nossa História ######################################*/
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+p.titulo {
+    color: white;
+    font-size: 48px;
+    padding-top: 100px;
+}
+
+p.titu {
+    color: white;
+    font-size: 24px;
+    padding-bottom: 30px;
+    line-height: 120%;
+}
+
+
+.btn_destaque, .metade input[type=submit] {
+    border:none;
+    background-color: rgb(255, 77,77);
+    color: white;
+    padding: 12px 40px;
+    border-radius: 3px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+a.btn_destaque {
+    margin-left: 25px;
+}
+
+
+#borda{
+    border: 2px solid black;
+    margin: 0.3%;
+    width: 32%;
+}
+
+#nev{
+    border: 2px hidden black;
+    margin: 0;
+    max-width: 48%;
+}
+
+
+#nev img{
+    max-width: 100%;
+    width: auto;
+}
+
+#nev2{
+    border: 2px hidden black;
+    margin: 0;
+}
+
+
+#nev2 img{
+    max-width: 100%;
+    width: auto;
+}
+
+
+
+
+
+
+
+
+/*css do professor a partir daqui*/
+.clearfix {
+    clear: both;
+}
+
+#container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.um_terco {
+    width: 33%;
+    float: left;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+.um_terco, .um_terco a {
+    color: black;
+}
+.um_terco .logo {
+    width: 100%;
+}
+.um_terco img {
+    width: 35px;
+}
+.margem_esquerda{
+    margin-left: 30px;
+}
+
+.logo{
+    height: 170px;
+}
+
+/* Tablets e Computadores */
+@media screen and (min-width: 481px) and (max-width: 1366px){
+    
+}
+/* Smartphones */
+@media screen and (max-width: 480px) {
+    .logo {
+        width: 100%;
+    }
+    .um_terco {
+        width: 100%;
+        border-bottom: 1px solid rgb(204, 204, 204);
+        padding-left: 20px;
+    }
+    .margem_esquerda {
+        margin-left: 0px;
+    }
+    .um_terco .logo{
+        width: 50%;
+    }
+    .container_logo {
+        text-align: center;
+    }
+}
+
+
+#menu {
+    background-color: rgba(100,0,0, .8);
+}
+
+.direitos_reservados {
+    background-color: rgb(255, 77, 77);
+    color: white;
+    text-align: center;
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+
+#papel {
+    text-align: center;
+    position: center;
+    background-color: #1c0304;
+}
+
+
+main h2{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20pt;
+    /*
+    Estilos da borda:
+    solid-> linha sólida
+    dotted-> linha pontilhada
+    dashed-> linha tracejada
+    double-> linha dupla. Sempre com a expessura par (2px; 4px;)
+    */
+    border-bottom: 1px solid black;
+    padding: 30px;
+    text-align: center;
+}
+
+main h3{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15pt;
+    font-weight: bold;   /*aplicação de negrito*/
+    padding: 20px;
+}
+main p{
+    font-family: 'Roboto Mono', monospace; 
+    font-size: 12pt;
+    /*abaixo o comando de altura da linha em 2px;
+    */
+    line-height: 20pt;
+    text-align: justify; /*Texto justificado*/
+    padding: 10px;
+}
+
+#imghome img{
+width: 30vw;
+right: auto;
+margin: 50px;
+/*Arredondar os cantos da iagem*/
+border-radius: 50%;
+/*Aplicar efeito de transparencia na imagem usando o comando opacity*/
+opacity: 0.5;
+/*Efeito de transição 1 segundo de duração*/
+transition: ease .5s;
+
+}
+
+#imghome img:hover{
+    border-radius: 0;
+    opacity: 1;
+    transform: scale(1.5);
+   /* transition: rotate (gira a imagem)*/
+}
+
+
+
+
+.metade img {
+    width: 35px;
+}
+
+.contato{
+    background-image: url(./hulk.jpg);
+    height: 450px;
+    color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: gray;
+    
+}
+
+div#descrição{
+    background-position: center;
+    text-align: center;
+}
+
+#fundo{
+    background-color: blue;
+    color: white;
+}
+
+div.sobre {
+    background-position: center;
+    text-align: center;
+
+}
+
+p.cc {
+    color: rgba(100,0,0, .8);
+}
+
+
+.sec01 {
+    height: 100%;
+    color: white;
+    background-image: url(../img/stream.png);
+    background-repeat: no-repeat;
+    background-color: black;
+}
+.sec01 p.titulo {
+    font-size: 48px;
+    padding-top: 130px;
+}
+.sec01 p {
+    font-size: 24px;
+    padding-bottom: 30px;
+    line-height: 120%;
+}
+
+#fundo {
+    background-color: black;
+    height: 25px;
+    width: 25px;
+}
+
+
+
+
+.fundo2{
+    background-image: url(./sobrenos2.jpg);
+    height: 450px;
+    color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: gray;
+}
+
+
+
+
+
+
